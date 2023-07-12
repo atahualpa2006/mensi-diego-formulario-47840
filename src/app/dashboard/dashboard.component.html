@@ -1,0 +1,22 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+            <mat-toolbar color="primary">
+              <button (click)= "drawer.toggle()"
+                mat-icon-button
+                class="example-icon" 
+                aria-label="Example icon-button with menu icon">
+                <mat-icon>menu</mat-icon>
+              </button>
+              <span>Mi formulario</span>
+            </mat-toolbar>
+            <!----------------------------------------------------- FIN TOOLBAR-->
+            <main class=" p-3">
+                <!-- <app-home></app-home> -->
+                <app-user></app-user>
+            </main>
+      
+    </div>
+  </mat-drawer-container>

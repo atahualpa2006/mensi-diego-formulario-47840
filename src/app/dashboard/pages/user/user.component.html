@@ -1,0 +1,56 @@
+<form [formGroup]="userForm"   class="grid">
+    <div class="col-6 field">
+        <mat-form-field class="w-full" appearance="outline">
+            <mat-label>name</mat-label>
+            <input [formControl]="nameControl" matInput type="text" name="name">
+            <mat-error *ngif="nameControl.hasError('required')">
+                Este campo es obligatorio
+            </mat-error>  
+            <mat-error *ngif="nameControl.hasError('minlegth')">
+                Debe colocar al menos 2 caracteres
+            </mat-error>      
+        </mat-form-field>
+</div>
+
+    <div class="col-6 field">
+        <mat-form-field appearance="outline">
+            <mat-label>surname</mat-label>
+            <input [formControl]="surnameControl" type="text" name="surname">
+            <mat-error *ngif="nameControl.hasError('required')">
+                Este campo es obligatorio
+            </mat-error>  
+            <mat-error *ngif="nameControl.hasError('minlegth')">
+                Debe colocar al menos 2 caracteres
+            </mat-error>      
+        </mat-form-field>
+    </div>
+
+    <div class="col-6 field">
+        <mat-form-field appearance="outline">
+            <mat-label>email</mat-label>
+            <input [formControl]="emailControl" type="text" name="email">
+            <mat-error *ngif="nameControl.email">
+                Este campo es obligatorio
+            </mat-error>  
+            <mat-error *ngif="nameControl.hasError('minlegth')">
+                Debe colocar al menos 2 caracteres
+            </mat-error>      
+        </mat-form-field> 
+    </div>
+
+    <div class="col-6 field">
+        <mat-form-field appearance="outline">
+            <mat-label>password</mat-label>
+            <input [formControl]="passwordControl" type="text" password="password">
+            <mat-error *ngif="nameControl.hasError('required')">
+                Este campo es obligatorio
+            </mat-error>  
+            <mat-error *ngif="nameControl.hasError('minlegth')">
+                Debe colocar al menos 2 caracteres
+            </mat-error>      
+    </mat-form-field>
+    </div>  
+
+</form>
+
+<pre>{{userForm.value | json}}</pre>
